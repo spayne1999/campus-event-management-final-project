@@ -1,0 +1,24 @@
+{
+  "events": [
+    {
+      "title": "Cybersecurity Career Night",
+      "organizer": "Cyber Security Club",
+      "venue": "Library Auditorium",
+      "category": "Career",
+      "date": "2026-05-20",
+      "time": "17:30",
+      "capacity": 75,
+      "description": "Networking event with alumni, recruiters, and campus IT leaders."
+    },
+    {
+      "title": "Spring Coding Bootcamp",
+      "organizer": "Computer Science Department",
+      "venue": "Tech Building Lab 202",
+      "category": "Workshop",
+      "date": "2026-05-24",
+      "time": "14:00",
+      "capacity": 40,
+      "description": "Hands-on Java and SQL workshop for first-year students."
+    }
+  ]
+}

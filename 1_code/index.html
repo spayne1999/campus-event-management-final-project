@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Event Management Database System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Systems Analysis & Design Final Project</p>
+      <h1>Campus Event Management Database System</h1>
+      <p class="hero-copy">
+        A browser-based event management dashboard that helps student organizations and staff
+        create events, track registrations, and monitor campus engagement with minimal manual work.
+      </p>
+    </div>
+    <div class="hero-panel">
+      <h2>System Highlights</h2>
+      <ul>
+        <li>Fast event creation and validation</li>
+        <li>Automatic registration totals and fill-rate tracking</li>
+        <li>Search and filter support for quick event discovery</li>
+        <li>Local storage persistence for lightweight deployment</li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel full">
+      <div class="section-head">
+        <h2>Dashboard</h2>
+        <p>Automated metrics update whenever an event or registration changes.</p>
+      </div>
+      <div id="stats" class="stats-grid"></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <h2>Create Event</h2>
+        <p>Faculty or student leaders can quickly add a new campus event.</p>
+      </div>
+      <form id="event-form" class="stack-form">
+        <label>Event Title<input name="title" type="text" required /></label>
+        <label>Organizer<input name="organizer" type="text" required /></label>
+        <label>Venue<input name="venue" type="text" required /></label>
+        <label>Category
+          <select name="category" required>
+            <option value="">Choose one</option>
+            <option>Career</option>
+            <option>Workshop</option>
+            <option>Social</option>
+            <option>Academic</option>
+            <option>Club</option>
+          </select>
+        </label>
+        <div class="split">
+          <label>Date<input name="date" type="date" required /></label>
+          <label>Time<input name="time" type="time" required /></label>
+        </div>
+        <label>Capacity<input name="capacity" type="number" min="1" required /></label>
+        <label>Description<textarea name="description" rows="4"></textarea></label>
+        <button type="submit">Create Event</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <h2>Register Attendee</h2>
+        <p>The system blocks duplicates and full events automatically.</p>
+      </div>
+      <form id="registration-form" class="stack-form">
+        <label>Event
+          <select id="registration-event" name="eventId" required></select>
+        </label>
+        <label>Student Name<input name="name" type="text" required /></label>
+        <label>Email<input name="email" type="email" required /></label>
+        <label>Major<input name="major" type="text" /></label>
+        <button type="submit">Register Attendee</button>
+      </form>
+      <div id="message-box" class="message info"><ul><li>System ready for use.</li></ul></div>
+    </section>
+
+    <section class="panel full">
+      <div class="section-head">
+        <h2>Search and Browse Events</h2>
+        <p>Filter by title, organizer, venue, or category to reduce user effort.</p>
+      </div>
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="Search events..." />
+        <select id="category-filter">
+          <option>All</option>
+          <option>Career</option>
+          <option>Workshop</option>
+          <option>Social</option>
+          <option>Academic</option>
+          <option>Club</option>
+        </select>
+      </div>
+      <div id="event-list" class="event-grid"></div>
+    </section>
+
+    <section class="panel full">
+      <div class="section-head">
+        <h2>Registration Table</h2>
+        <p>Attendee data updates automatically when registrations are submitted.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Major</th>
+              <th>Event</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="attendee-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel full">
+      <div class="section-head">
+        <h2>Activity Log</h2>
+        <p>Recent changes help support debugging and quick audit review.</p>
+      </div>
+      <ul id="activity-feed" class="activity-feed"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Prepared by Seth Payne | Final Project Demo</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

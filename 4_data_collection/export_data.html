@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Export Data - Campus Event Management</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f8fafc; margin: 24px; }
+    .card { background: white; padding: 24px; border-radius: 16px; max-width: 860px; margin: auto; box-shadow: 0 8px 20px rgba(0,0,0,.08); }
+    button { padding: 12px 16px; border: none; border-radius: 10px; background: #2563eb; color: white; font-weight: 700; cursor: pointer; }
+    pre { background: #0f172a; color: #e2e8f0; padding: 16px; border-radius: 12px; overflow: auto; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Data Collection / Export Utility</h1>
+    <p>This utility reads the demo's localStorage data and displays it for export or backup.</p>
+    <button id="load-btn">Load Current Demo Data</button>
+    <pre id="output">Click the button to view the current JSON dataset.</pre>
+  </div>
+  <script src="export_data.js"></script>
+</body>
+</html>
